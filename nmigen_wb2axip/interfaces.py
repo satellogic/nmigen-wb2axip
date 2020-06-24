@@ -10,6 +10,14 @@ class AxiMaster(Record):
     def connect(self, slave):
         return connect_axi(self, slave)
 
+    @classmethod
+    def from_record(cls, rec):
+        data_w = len(rec['WDATA'])
+        addr_w = len(rec['AWADDR'])
+        id_w = len(rec['AWID'])
+        user_w = len(rec['WUSER']) if 'WUSER' in rec.fields else 0
+        return AxiMaster(data_w, addr_w, id_w, user_w, fields=rec.fields)
+
 
 class AxiSlave(Record):
     def __init__(self, data_w, addr_w, id_w, user_w=0, **kargs):
@@ -18,6 +26,14 @@ class AxiSlave(Record):
 
     def connect(self, master):
         return connect_axi(master, self)
+
+    @classmethod
+    def from_record(cls, rec):
+        data_w = len(rec['WDATA'])
+        addr_w = len(rec['AWADDR'])
+        id_w = len(rec['AWID'])
+        user_w = len(rec['WUSER']) if 'WUSER' in rec.fields else 0
+        return AxiSlave(data_w, addr_w, id_w, user_w, fields=rec.fields)
 
 
 class AxiLiteMaster(Record):
@@ -28,6 +44,12 @@ class AxiLiteMaster(Record):
     def connect(self, slave):
         return connect_axilite(self, slave)
 
+    @classmethod
+    def from_record(cls, rec):
+        data_w = len(rec['WDATA'])
+        addr_w = len(rec['AWADDR'])
+        return AxiLiteMaster(data_w, addr_w, fields=rec.fields)
+
 
 class AxiLiteSlave(Record):
     def __init__(self, data_w, addr_w, **kargs):
@@ -36,6 +58,12 @@ class AxiLiteSlave(Record):
 
     def connect(self, master):
         return connect_axilite(master, self)
+
+    @classmethod
+    def from_record(cls, rec):
+        data_w = len(rec['WDATA'])
+        addr_w = len(rec['AWADDR'])
+        return AxiLiteSlave(data_w, addr_w, fields=rec.fields)
 
 
 def _connect(master, slave):
