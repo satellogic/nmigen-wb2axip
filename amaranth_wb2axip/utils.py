@@ -1,5 +1,5 @@
 from urllib import request
-from nmigen.hdl.rec import DIR_FANIN, DIR_FANOUT, Record
+from amaranth.hdl.rec import DIR_FANIN, DIR_FANOUT, Record
 
 
 def dir_prefix(d):

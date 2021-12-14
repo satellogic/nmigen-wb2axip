@@ -1,8 +1,8 @@
-from nmigen import Module
-from nmigen_wb2axip.demoaxi import DemoAxi
-from nmigen_wb2axip.axi2axilite import Axi2AxiLite
-from nmigen_wb2axip.axilxbar import AxiLiteXBar
-from nmigen_wb2axip.interfaces import *
+from amaranth import Module
+from amaranth_wb2axip.demoaxi import DemoAxi
+from amaranth_wb2axip.axi2axilite import Axi2AxiLite
+from amaranth_wb2axip.axilxbar import AxiLiteXBar
+from amaranth_wb2axip.interfaces import *
 from .utils import synth
 
 

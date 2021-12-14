@@ -1,9 +1,9 @@
 import subprocess
-from nmigen.build import *
-from nmigen.hdl.ir import Fragment
-from nmigen.build.plat import TemplatedPlatform
-from nmigen.back import rtlil
-from nmigen._toolchain import require_tool
+from amaranth.build import *
+from amaranth.hdl.ir import Fragment
+from amaranth.build.plat import TemplatedPlatform
+from amaranth.back import rtlil
+from amaranth._toolchain import require_tool
 import tempfile
 
 class EmptyPlatform(Platform):
