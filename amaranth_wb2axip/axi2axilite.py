@@ -1,5 +1,5 @@
-from nmigen import Elaboratable, Instance, ClockSignal, ResetSignal, Module
-from nmigen.build.plat import Platform
+from amaranth import Elaboratable, Instance, ClockSignal, ResetSignal, Module
+from amaranth.build.plat import Platform
 from .interfaces import AxiSlave, AxiLiteMaster
 from .utils import get_ports_for_instance, add_verilog_file
 
@@ -34,7 +34,7 @@ class Axi2AxiLite(Elaboratable):
 
 
 if __name__ == '__main__':
-    from nmigen.cli import main
+    from amaranth.cli import main
     core = Axi2AxiLite(32, 8, 5)
     ports = [v for v in core.axi.fields.values()]
     ports += [v for v in core.axilite.fields.values()]

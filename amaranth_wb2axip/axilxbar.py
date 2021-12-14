@@ -1,6 +1,6 @@
 from math import ceil, log2
-from nmigen import *
-from nmigen.build.plat import Platform
+from amaranth import *
+from amaranth.build.plat import Platform
 from .interfaces import AxiLiteSlave, AxiLiteMaster
 from .utils import get_ports_for_instance, add_verilog_file
 
@@ -77,7 +77,7 @@ class AxiLiteXBar(Elaboratable):
         return m
 
 if __name__ == '__main__':
-    from nmigen.cli import main
+    from amaranth.cli import main
 
     xbar = AxiLiteXBar(32, 16)
     slave1 = AxiLiteSlave(32, 16, name='slave1')

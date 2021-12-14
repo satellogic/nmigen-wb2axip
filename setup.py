@@ -15,15 +15,15 @@ def scm_version():
 
 
 setup(
-    name="nmigen_wb2axip",
+    name="amaranth_wb2axip",
     use_scm_version=scm_version(),
     author="andresdemski",
     author_email="andresdemski@gmail.com",
-    description="nMigen wrapper for http://github.com/zipcpu/wb2axip cores",
+    description="Amaranth wrapper for http://github.com/zipcpu/wb2axip cores",
     license="BSD",
     python_requires="~=3.6",
     install_requires=[
-        "nmigen",
+        "amaranth @ git+https://github.com/amaranth-lang/amaranth",
     ],
     packages=find_packages(exclude=["*.test*"]),
 )

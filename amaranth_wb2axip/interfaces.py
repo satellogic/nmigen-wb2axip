@@ -1,4 +1,4 @@
-from nmigen.hdl.rec import DIR_FANOUT, DIR_FANIN, Record
+from amaranth.hdl.rec import DIR_FANOUT, DIR_FANIN, Record
 from .layouts import get_axi_layout, get_axilite_layout
 
 

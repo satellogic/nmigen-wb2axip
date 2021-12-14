@@ -1,4 +1,4 @@
-from nmigen.hdl.rec import DIR_FANIN, DIR_FANOUT
+from amaranth.hdl.rec import DIR_FANIN, DIR_FANOUT
 
 def to_direction(interface, d):
     assert interface in ['master', 'slave']
