@@ -1,3 +1,3 @@
-# nmigen-wb2axip
+# amaranth-wb2axip
 
-nMigen wrapper for [wb2axip](http://github.com/zipcpu/wb2axip) cores.
+Amaranth wrapper for [wb2axip](http://github.com/zipcpu/wb2axip) cores.
